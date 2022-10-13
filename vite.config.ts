@@ -10,5 +10,11 @@ export default defineConfig({
     alias: [
       { find: '@', replacement: srcDir }
     ]
+  },
+  server: {
+    hmr: {
+      path: '/ws',
+      clientPort: 5173
+    }
   }
 })

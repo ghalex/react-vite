@@ -1,3 +1,7 @@
 # react-vite
 
-React, axios, react-query Vite template
+Vite template:
+ - react
+ - axios
+ - react-query
+ - docker
