@@ -20,7 +20,8 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/strict-boolean-expressions': ['warn', { allowAny: true }],
-    '@typescript-eslint/explicit-function-return-type': 'off'
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    "@typescript-eslint/triple-slash-reference": 'off'
 
   }
 }
