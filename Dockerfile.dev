@@ -1,0 +1,17 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+COPY package.json .
+RUN npm install --force
+
+# COPY . .
+
+# ENV VITE_NAME=frontend-dev
+# ENV VITE_API_URL=http://localhost:5000
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD [ "npm", "run", "dev" ]
