@@ -1,10 +1,12 @@
-import React, { FC, useMemo, Suspense } from 'react'
+import React, { FC, useMemo } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import axios, { AxiosContext } from '@/api/request'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { CssVarsProvider } from '@mui/joy/styles'
 // import { ErrorBoundary } from 'react-error-boundary'
 
 import RenderRouter from './routes'
+import theme from './theme'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,11 +35,11 @@ const MainApplication: FC<any> = () => {
   return (
     <AxiosProvider>
       <QueryClientProvider client={queryClient}>
-        <Suspense fallback={<div>Suspense fallback.</div>}>
+        <CssVarsProvider theme={theme}>
           <BrowserRouter>
             <RenderRouter />
           </BrowserRouter>
-        </Suspense>
+        </CssVarsProvider>
       </QueryClientProvider>
     </AxiosProvider>
   )

@@ -12,6 +12,9 @@
     "commitlint": "commitlint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/joy": "^5.0.0-alpha.49",
     "axios": "^1.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

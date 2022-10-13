@@ -20,7 +20,7 @@ const MainLayout: FC<any> = () => {
     //   {children}
     // </Box>
     <div>
-      <header>Main layout here</header>
+      <header>Header</header>
       <main><Outlet /></main>
     </div>
   )
