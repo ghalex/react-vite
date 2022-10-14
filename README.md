@@ -1,16 +1,13 @@
 # react-vite
 
-## Vite template:
+## Vite template using @mui/joy:
  - react
  - axios
  - react-query
  - docker
-
-```js
-npx degit ghalex/react-vite {project-name}
-```
-
-## Template using @mui/joy
+ - husky
+ - commitlint
+ - admin dashboar
 
 ```js
 npx degit ghalex/react-vite#joy-ui {project-name}
