@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import logo from './square.svg'
+// import logo from './square.svg'
 import { Box, Typography, useColorScheme } from '@mui/joy'
 
 interface LogoProps {
