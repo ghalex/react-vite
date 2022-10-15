@@ -17,13 +17,15 @@ const FormLogin = () => {
     <Box sx={{
       display: 'flex',
       flexDirection: 'column',
+      width: '100%',
       gap: 2
     }}>
       <TextField
         // html input attribute
         name="email"
         type="email"
-        placeholder="johndoe@email.com"
+        placeholder="yoda@email.com"
+        variant="soft"
         startDecorator={<PersonRoundedIcon />}
         // pass down to FormLabel as children
         label="Email"
@@ -31,6 +33,7 @@ const FormLogin = () => {
 
       <TextField
         name="password"
+        variant="soft"
         type={passworType}
         placeholder="password"
         startDecorator={<KeyIcon />}

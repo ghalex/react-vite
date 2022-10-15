@@ -7,7 +7,7 @@ const LoginPage: FC<any> = ({ children }) => {
   return (
     <BlankLayout>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <HeaderLogo size={64} hideLabel />
+
         <Sheet
             sx={{
               width: 300,
@@ -16,12 +16,15 @@ const LoginPage: FC<any> = ({ children }) => {
               px: 2, // padding left & right
               display: 'flex',
               flexDirection: 'column',
+              alignItems: 'center',
               gap: 2,
               borderRadius: 'sm',
               boxShadow: 'md'
             }}
             variant="outlined"
           >
+
+          <HeaderLogo size={64} hideLabel />
           <div>
             <Typography level="h3" component="h1" sx={{ mb: '-2px' }}>
               <b>Welcome!</b>
