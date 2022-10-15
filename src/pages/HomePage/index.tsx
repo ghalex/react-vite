@@ -1,9 +1,8 @@
 import React, { FC } from 'react'
 import { useFetchProducts } from '@/api/products'
-import { Box, Button, Typography, IconButton } from '@mui/joy'
-import { MainLayout as Layout } from '@/layouts'
-import { HeaderIcons, HeaderLogo, HeaderSearch, HBox, SideNavExample } from '@/components'
-import { getInitColorSchemeScript } from '@mui/joy/styles'
+import { BaseLayout as Layout } from '@/layouts'
+import { HeaderIcons, HeaderLogo, HeaderSearch, HBox, SideNavExample, ContentExample } from '@/components'
+import { IconButton } from '@mui/joy'
 
 import MenuIcon from '@mui/icons-material/Menu'
 
@@ -23,11 +22,11 @@ const HomePage: FC<any> = () => {
     <>
       {drawerOpen && (
         <Layout.SideDrawer onClose={() => setDrawerOpen(false)}>
-          sidedrawer
+          <SideNavExample />
         </Layout.SideDrawer>
       )}
 
-      <Layout.Root>
+      <Layout.Root cols={2}>
         <Layout.Header>
           <HBox>
             <IconButton
@@ -43,26 +42,13 @@ const HomePage: FC<any> = () => {
           <HeaderSearch />
           <HeaderIcons />
         </Layout.Header>
+
         <Layout.SideNav>
           <SideNavExample />
         </Layout.SideNav>
+
         <Layout.Main>
-          <div>scheme: {getInitColorSchemeScript()}</div>
-          <Box sx={{ maxWidth: 650 }}>
-            <Typography level='display2'>Find and fix problems</Typography>
-            <Typography level='body1' textColor='neutral.600'>ESLint statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.</Typography>
-          </Box>
-          <HBox sx={{ m: 1 }}>
-            <Button size='sm' variant='soft'>Click Me</Button>
-            <Button size='sm' variant='soft' color='danger'>Cancel</Button>
-          </HBox>
-          <Typography level="body2">
-            <ul>
-              {products.data?.map(p => (
-                <li key={p.id}>{p.title}</li>
-              ))}
-            </ul>
-          </Typography>
+          <ContentExample products={products.data ?? []} />
         </Layout.Main>
       </Layout.Root>
     </>

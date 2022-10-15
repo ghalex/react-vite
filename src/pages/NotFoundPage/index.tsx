@@ -1,13 +1,28 @@
 import React, { FC } from 'react'
 
-// interface HomePageProps {
-//   children: React.ReactElement
-// }
+import { BaseLayout as Layout } from '@/layouts'
+import { HeaderIcons, HeaderLogo } from '@/components'
+import { Button, Typography } from '@mui/joy'
+import icon404 from '@/assets/404-error.png'
 
-const NotFound: FC<any> = ({ children }) => {
+const NotFoundPage: FC<any> = () => {
   return (
-    <div>Page not found</div>
+    <Layout.Root cols={1}>
+      <Layout.Header>
+        <HeaderLogo />
+        {/* <HeaderSearch /> */}
+        <HeaderIcons />
+      </Layout.Header>
+
+      <Layout.Main sx={{ alignItems: 'center' }}>
+        <img src={icon404} height={400} />
+        <Typography level="display1">Page not found</Typography>
+        <Typography>Page you are trying to access cannot be found.</Typography>
+        <Button component="a" href="/" sx={{ mt: 2 }}>Go to home</Button>
+      </Layout.Main>
+    </Layout.Root>
+
   )
 }
 
-export default NotFound
+export default NotFoundPage

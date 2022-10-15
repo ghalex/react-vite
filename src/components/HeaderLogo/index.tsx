@@ -1,18 +1,22 @@
 import React, { FC } from 'react'
 // import logo from './square.svg'
-import { Box, Typography, useColorScheme } from '@mui/joy'
+import { Box, BoxProps, Typography, useColorScheme } from '@mui/joy'
 
-interface LogoProps {
+interface LogoProps extends BoxProps {
   size?: number
+  hideLabel?: boolean
 }
 
-const Logo: FC<LogoProps> = ({ size = 38 }) => {
+const Logo: FC<LogoProps> = ({ size = 34, hideLabel = false, ...props }) => {
   const { mode } = useColorScheme()
   const textColor = mode === 'light' ? 'var(--joy-palette-primary-500)' : 'var(--joy-palette-primary-200)'
   const logoColor = mode === 'light' ? 'white' : 'var(--joy-palette-neutral-900)'
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'flex-center', gap: 1 }}>
+    <Box component="a" href="/" sx={[
+      { display: 'flex', alignItems: 'flex-center', gap: 1, textDecoration: 'none' },
+      ...(Array.isArray(props.sx) ? props.sx : [props.sx])
+    ]}>
       {/* <img src={logo} height={height} alt="Logo" /> */}
       <svg width={size} height={size} viewBox="0 0 250 250" fill={textColor} xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip1)">
@@ -26,10 +30,11 @@ const Logo: FC<LogoProps> = ({ size = 38 }) => {
         </defs>
       </svg>
 
+      {!hideLabel &&
       <Typography textColor={textColor} level='h4' >
         <strong>logo</strong>
         <Typography sx={{ opacity: 0.8 }}>here</Typography>
-      </Typography>
+      </Typography>}
     </Box>
   )
 }

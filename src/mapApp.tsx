@@ -33,15 +33,15 @@ const AxiosProvider: FC<any> = ({ children }) => {
 
 const MainApplication: FC<any> = () => {
   return (
+          <BrowserRouter>
     <AxiosProvider>
       <QueryClientProvider client={queryClient}>
         <CssVarsProvider theme={theme}>
-          <BrowserRouter>
             <RenderRouter />
-          </BrowserRouter>
         </CssVarsProvider>
       </QueryClientProvider>
     </AxiosProvider>
+          </BrowserRouter>
   )
 }
 

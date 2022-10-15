@@ -27,7 +27,7 @@ const SideDrawer: FC<Props> = ({ onClose, ...props }) => (
         minWidth: 300,
         width: 'max-content',
         height: '100%',
-        p: 2,
+        p: 0,
         boxShadow: 'lg',
         bgcolor: 'background.componentBg'
       }}

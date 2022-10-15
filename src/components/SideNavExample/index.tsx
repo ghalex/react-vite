@@ -1,11 +1,14 @@
 import React, { FC } from 'react'
 import { IconButton, List, ListItem, ListItemButton, ListItemDecorator, ListItemContent, Box, Chip, Typography } from '@mui/joy'
 
-import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded'
+// Icons
+// import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded'
+// import StackedBarChartIcon from '@mui/icons-material/StackedBarChart'
 import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded'
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded'
 import AssignmentIndRoundedIcon from '@mui/icons-material/AssignmentIndRounded'
 import SettingsIcon from '@mui/icons-material/Settings'
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 
 const SideNavHeader: FC<any> = ({ children }) => {
   return (
@@ -55,31 +58,31 @@ const SideNavExample: FC<any> = () => {
         >
           {/* People */}
           <ListItem>
-            <ListItemButton variant="soft" color="primary">
+            <ListItemButton component="a" href='/' variant="soft" color="primary">
               <ListItemDecorator sx={{ color: 'inherit' }}>
-                <PeopleRoundedIcon fontSize="small" />
+                <DashboardCustomizeIcon fontSize="small" />
               </ListItemDecorator>
-              <ListItemContent>People</ListItemContent>
+              <ListItemContent>Dashboard</ListItemContent>
             </ListItemButton>
           </ListItem>
 
           {/* Manage */}
           <ListItem>
-            <ListItemButton>
+            <ListItemButton component="a" href='/test'>
               <ListItemDecorator sx={{ color: 'neutral.500' }}>
                 <AssignmentIndRoundedIcon fontSize="small" />
               </ListItemDecorator>
-              <ListItemContent>Managing accounts</ListItemContent>
+              <ListItemContent>Test</ListItemContent>
             </ListItemButton>
           </ListItem>
 
           {/* Policies */}
           <ListItem>
-            <ListItemButton>
+            <ListItemButton component="a" href="/login">
               <ListItemDecorator sx={{ color: 'neutral.500' }}>
                 <ArticleRoundedIcon fontSize="small" />
               </ListItemDecorator>
-              <ListItemContent>Policies</ListItemContent>
+              <ListItemContent>Login</ListItemContent>
               <Chip variant="soft" size="sm" sx={{ borderRadius: 'sm' }}>
                 Beta
               </Chip>
@@ -98,8 +101,8 @@ const SideNavExample: FC<any> = () => {
         >
           {/* Settings */}
           <ListItem>
-            <ListItemButton sx={{ color: 'neutral.500' }}>
-              <ListItemDecorator sx={{ color: 'inherit' }}>
+            <ListItemButton component="a" href='/settings'>
+              <ListItemDecorator sx={{ color: 'neutral.500' }}>
                 <SettingsIcon fontSize="small" />
               </ListItemDecorator>
               <ListItemContent>Settings</ListItemContent>

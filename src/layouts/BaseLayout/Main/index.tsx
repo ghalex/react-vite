@@ -7,7 +7,7 @@ const Main: FC<BoxProps> = (props) => {
       component="main"
       className="main"
       {...props}
-      sx={[{ p: 2 }, ...(Array.isArray(props.sx) ? props.sx : [props.sx])]}
+      sx={[{ display: 'flex', flexDirection: 'column', p: 2 }, ...(Array.isArray(props.sx) ? props.sx : [props.sx])]}
     />
   )
 }

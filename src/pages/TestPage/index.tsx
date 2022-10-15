@@ -1,12 +1,48 @@
 import React, { FC } from 'react'
 
-// interface HomePageProps {
-//   children: React.ReactElement
-// }
+import { BaseLayout as Layout } from '@/layouts'
+import { IconButton } from '@mui/joy'
+import { HeaderIcons, HeaderLogo, HeaderSearch, SideNavExample, HBox } from '@/components'
 
-const TestPage: FC<any> = ({ children }) => {
+import MenuIcon from '@mui/icons-material/Menu'
+
+const TestPage: FC<any> = () => {
+  const [drawerOpen, setDrawerOpen] = React.useState(false)
+
   return (
-    <div>Test Page</div>
+    <>
+    {drawerOpen && (
+      <Layout.SideDrawer onClose={() => setDrawerOpen(false)}>
+        <SideNavExample />
+      </Layout.SideDrawer>
+    )}
+
+    <Layout.Root cols={2}>
+      <Layout.Header>
+        <HBox>
+          <IconButton
+            variant="outlined"
+            size="sm"
+            onClick={() => setDrawerOpen(true)}
+            sx={{ display: { md: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <HeaderLogo />
+        </HBox>
+        <HeaderSearch />
+        <HeaderIcons />
+      </Layout.Header>
+
+      <Layout.SideNav>
+          <SideNavExample />
+        </Layout.SideNav>
+
+      <Layout.Main>
+        test page
+      </Layout.Main>
+    </Layout.Root>
+    </>
   )
 }
 
