@@ -26,6 +26,10 @@ const RenderRouter: FC = () => {
     {
       path: 'login',
       element: <pages.LoginPage />
+    },
+    {
+      path: 'sign-up',
+      element: <pages.SignupPage />
     }
   ])
 

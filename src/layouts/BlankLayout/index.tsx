@@ -13,7 +13,7 @@ const BlankLayout: FC<BlankLayoutProps> = ({ children }) => {
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
-        backgroundColor: '#f4f5f9'
+        backgroundColor: 'background.appBody'
       }}
     >
       {children}

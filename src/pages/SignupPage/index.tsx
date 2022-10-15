@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import { BlankLayout } from '@/layouts'
-import { FormLogin, HeaderLogo } from '@/components'
+import { FormSignup, HeaderLogo } from '@/components'
 import { Box, Sheet, Typography, Link } from '@mui/joy'
 
-const LoginPage: FC<any> = ({ children }) => {
+const SignupPage: FC<any> = ({ children }) => {
   return (
     <BlankLayout>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -24,19 +24,19 @@ const LoginPage: FC<any> = ({ children }) => {
           >
 
           <HeaderLogo size={64} hideLabel />
-          <div>
+          <Box sx={{ textAlign: 'center' }}>
             <Typography level="h3" component="h1" sx={{ mb: '-2px' }}>
-              <b>Welcome!</b>
+              <b>Create account</b>
             </Typography>
-            <Typography level="body2">Sign in to your account.</Typography>
-          </div>
-          <FormLogin />
+            <Typography level="body2">Create your account to login.</Typography>
+          </Box>
+          <FormSignup />
           <Typography
-            endDecorator={<Link href="/sign-up">Sign up</Link>}
+            endDecorator={<Link href="/login">Login</Link>}
             fontSize="sm"
             sx={{ alignSelf: 'center' }}
           >
-            Don&apos;t have an account?
+            Have an account?
           </Typography>
         </Sheet>
       </Box>
@@ -44,4 +44,4 @@ const LoginPage: FC<any> = ({ children }) => {
   )
 }
 
-export default LoginPage
+export default SignupPage
